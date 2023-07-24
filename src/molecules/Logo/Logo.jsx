@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+//import { LogoContainer, LogoImg, LogoTitle} from './StyledLogo';
 import s from "./particle/style.module.css";
 
 // Stateless (solo recepcionara props y pintara)
@@ -10,6 +11,18 @@ const Logo = ({ title, image}) => (
     </div>
   </>
 )
+/*
+
+//Styled components
+const Logo = ({ title, image}) => (
+  <>
+    <LogoContainer> 
+      <LogoImg src={image} alt="logo" />
+      <LogoTitle>{title}</LogoTitle>
+    </LogoContainer>
+  </>
+)
+*/
 
 Logo.proptypes = {
   image: PropTypes.string,

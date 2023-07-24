@@ -11,7 +11,7 @@ const TvShowDetail = ({tvShow}) => {
       <div className={s.title}>{tvShow.name}</div>
       <div className={s.rating_container}>
         <FiveStarRating rating={rating} />
-        <span className={s.rating}>{rating}</span>
+        <span className={s.rating}>{rating}/5</span>
       </div>
       <div className={s.overview}>{tvShow.overview}</div>
     </>
