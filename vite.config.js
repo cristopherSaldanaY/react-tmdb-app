@@ -28,7 +28,7 @@ export default defineConfig({
     moduleBundling: true, // me permite tomar el codigo de las librerias del proyecto para producción y bajarles el tamaño
     debug: true, // Habilitar un inspector del build para tener el flujo de ejecuciones por la terminal
     prerenderPaths: ["/"], // pre-carga en memoria de rutas pesadas
-    watch: true, // deteccion de cambios asociados al build
+    //watch: true, // deteccion de cambios asociados al build
     modulePreload: true, // me permite a las rutas de pre-render ya tener a mano su codigo
     outDir: "build" // me permite cambiarle el nombre al directorio de salida
   }
