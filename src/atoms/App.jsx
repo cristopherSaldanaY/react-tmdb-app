@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Logo from "../molecules/Logo/Logo";
 import SearchBar from "../molecules/SearchBar/SearchBar";
 import TvShowDetail from "../molecules/TvShowDetail/TvShowDetail";
@@ -14,17 +14,34 @@ function App() {
   const [recommendationList, setRecommendationList] = useState([]);
 
   //Normal Version
+  /*
   async function fetchPopulars() {
     const popularTVShowList = await TVShowAPI.fetchPopulars();
 
     if (popularTVShowList.length > 0) {
       setCurrentTVShow(popularTVShowList[3]);
     }
-  }
+  } */
 
   // Optimized Version with useCallback
+  const fetchPopulars = useCallback(async () => {
+    const popularTVShowList = await TVShowAPI.fetchPopulars();
+    if (popularTVShowList.length > 0) {
+      setCurrentTVShow(popularTVShowList[0]);
+    }
+  }, []);
 
   // Optimized Version with useMemo
+  /*
+  const fetchPopulars = useMemo(() => {
+    return async () => {
+      const popularTVShowList = await TVShowAPI.fetchPopulars();
+
+      if (popularTVShowList.length > 0) {
+        setCurrentTVShow(popularTVShowList[0]);
+      }
+    }
+  }, []); */
 
   async function fetchByTitle(title) {
     const searchResponse = await TVShowAPI.fetchByTitle(title);
