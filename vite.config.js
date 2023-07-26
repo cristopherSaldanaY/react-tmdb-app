@@ -26,8 +26,10 @@ export default defineConfig({
     mode: "production", // especificar un contexto de salida que sera para un entorno de producción (opcional)
     chunks: true, // Habilitar el particionamiento para proveer por trozos el js
     moduleBundling: true, // me permite tomar el codigo de las librerias del proyecto para producción y bajarles el tamaño
-    
-
-
+    debug: true, // Habilitar un inspector del build para tener el flujo de ejecuciones por la terminal
+    prerenderPaths: ["/"], // pre-carga en memoria de rutas pesadas
+    watch: true, // deteccion de cambios asociados al build
+    modulePreload: true, // me permite a las rutas de pre-render ya tener a mano su codigo
+    outDir: "build" // me permite cambiarle el nombre al directorio de salida
   }
 })
